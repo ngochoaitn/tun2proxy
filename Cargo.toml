@@ -43,7 +43,8 @@ jni = { version = "0.21", default-features = false }
 
 [build-dependencies]
 serde_json = "1.0"
+winres = "0.1.12"
 
 [[bin]]
-name = "tun2proxy"
+name = "gpm_proxy_as_vpn"
 path = "src/bin/main.rs"

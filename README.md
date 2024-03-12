@@ -25,6 +25,16 @@ Clone the repository and `cd` into the project folder. Then run the following:
 cargo build --release
 ```
 
+Build windows 64bit:
+```
+cargo build --release --target x86_64-pc-windows-msvc
+```
+
+Build windows 32bit: (Chú ý copy lại file wintun.dll của 32bit từ https://www.wintun.net/)
+```
+cargo build --release --target i686-pc-windows-msvc
+```
+
 ### Building Framework for Apple Devices
 To build an XCFramework for macOS and iOS, run the following: 
 ```

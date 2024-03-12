@@ -3,6 +3,15 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     if let Ok(cargo_target_dir) = get_cargo_target_dir() {
         let mut f = std::fs::File::create(cargo_target_dir.join("build.log"))?;
         use std::io::Write;
+
+        // GPM START
+        use winres::WindowsResource;
+        WindowsResource::new()
+            // This path can be absolute, or relative to your crate root.
+            .set_icon("assets/icon.ico")
+            .compile()?;
+        // GPM END
+
         f.write_all(format!("CARGO_TARGET_DIR: '{}'\r\n", cargo_target_dir.display()).as_bytes())?;
 
         // The wintun crate's root directory
